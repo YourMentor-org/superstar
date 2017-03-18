@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Выбор даты и количества мест</title>
 </head>
+
 <body>
     <div class="container">
         <header class="header">
             <nav class="header__nav">
-                <a href="#" class="btn btn--back"><span> < </span></a>
+                <a href="#" class="btn btn_header"><span> < </span></a>
                 <h2 class="nav__head">Москва, Россия</h2>
-                <h1 class="logo nav__logo">
+                <h1 class="logo logo_header">
                     <img class="logo__img" src="" alt="">
                 </h1>
             </nav>
         </header>
-        <form action="" class="select_options_form">
-            <input type="text" class="input input--search select_loca_form__input">
-            <button type="submit">Свое местоположение</button>
-
-            <div class="select_options_form__date">
+        <form action="" class="form">
+            <div class="form__date">
                 <button class="btn" type="button">Сегодня</button>
                 <button class="btn" type="button">Выбрать дату</button>
             </div>
 
-            <div class="select_options_form__guest">
-                <h3 class="head_content">Гостей взрослых</h3>
-                <div class="select_num">
-                    <button class="btn select_num__minus" type="button">-</button>
-                    <div class="select_num__number">2</div>
-                    <button class="btn btn--success select_num__plus" type="button">+</button>
+            <div class="form__guest">
+                <h3 class="head-content">Гостей взрослых</h3>
+                <div class="select-num">
+                    <button class="btn" type="button">-</button>
+                    <div class="select-num__number">2</div>
+                    <button class="btn btn_success" type="button">+</button>
                 </div>
 
-                <h3 class="head_content">Детей</h3>
-                <div class="select_num">
-                    <button class="btn select_num__minus" type="button">-</button>
-                    <div class="select_num__number">1</div>
-                    <button class="btn select_num__plus" type="button">+</button>
+                <h3 class="head-content">Детей</h3>
+                <div class="select-num">
+                    <button class="btn" type="button">-</button>
+                    <div class="select-num__number">1</div>
+                    <button class="btn" type="button">+</button>
                 </div>
             </div>
 
-            <button class="btn btn--success select_options_form__submit_btn">Показать отели и цены</button>
+            <button class="btn btn--success">Показать отели и цены</button>
         </form>
     </div>
 </body>
+
 </html>
