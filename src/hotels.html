@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru"></html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Hotels</title>
+  <meta name="description" content="Hotels descr"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+  <div class="container">
+    <!-- Header-->
+    <header class="header"><a class="link-back" href="javascript:void(0)"><img src="images/white-arrow-left.svg" alt="назад"/></a><span class="header__city">Москва, Россия</span><a class="jcb-logo header__logo" href="javascript:void(0)"><img src="images/jcb-logo.svg" alt="JCB"/></a></header>
+    <!-- /Header-->
+    <!-- Main-->
+    <!-- Search-->
+    <div class="search__wrapper">
+      <form class="search" action="">
+        <div class="search__group">
+          <input class="search__field" type="search" name="search" placeholder="Поиск отеля по названию"/>
+          <button class="search__submit" type="submit"><img src="images/search-icon.svg" alt="Поиск"/></button>
+        </div>
+      </form>
+    </div>
+    <!-- /Search-->
+    <!-- Hotels-->
+    <ul class="hotels">
+      <li class="hotels__item hotel"><a href="#"><img class="hotel__image" src="images/hotel-sheraton.jpg" alt="Гостиница Шератон Москва"/>
+          <div class="hotel__description">
+            <div class="hotel__left"><span class="hotel__name">Гостиница Шератон Москва</span><span class="hotel__location">Химки — рядом с Москва</span></div>
+            <div class="hotel__right">
+              <div class="rating hotel__raiting"><span class="raiting__star"></span><span class="raiting__star"></span><span class="raiting__star"></span><span class="raiting__star"></span><span class="raiting__star"></span>
+              </div><span class="hotel__price">18 800 <span class="hotel__currency">руб.</span></span>
+            </div>
+          </div></a></li>
+      <li class="hotels__item hotel"><a href="#"><img class="hotel__image" src="images/hotel-palmira.jpg" alt="Palmira Bussines Club"/>
+          <div class="hotel__description">
+            <div class="hotel__left"><span class="hotel__name">Palmira Bussines Club</span><span class="hotel__location">В центре города</span></div>
+            <div class="hotel__right">
+              <div class="rating hotel__raiting"><span class="raiting__star"></span><span class="raiting__star"></span><span class="raiting__star"></span><span class="raiting__star"></span>
+              </div><span class="hotel__price">15 000 <span class="hotel__currency">руб.</span></span>
+            </div>
+          </div></a></li>
+      <li class="hotels__item hotel"><a href="#"><img class="hotel__image" src="images/hotel-palmira2.jpg" alt="Palmira Bussines Club"/>
+          <div class="hotel__description">
+            <div class="hotel__left"><span class="hotel__name">Palmira Bussines Club</span><span class="hotel__location">В центре города</span></div>
+            <div class="hotel__right">
+              <div class="rating hotel__raiting"><span class="raiting__star"></span><span class="raiting__star"></span><span class="raiting__star"></span><span class="raiting__star"></span><span class="raiting__star"></span>
+              </div><span class="hotel__price">13 200  <span class="hotel__currency">руб.</span></span>
+            </div>
+          </div></a></li>
+    </ul>
+    <!-- /Hotels-->
+    <!-- /Main-->
+    <!-- Footer-->
+    <!-- /Footer-->
+    <script src="js/app.js"></script>
+  </div>
+</body>
