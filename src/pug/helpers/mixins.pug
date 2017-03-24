@@ -1,0 +1,14 @@
+mixin hotel-item(image, name, location, raiting, price)
+	li.hotels__item.hotel
+		a(href="#")
+			img(src="images/" + image + ".jpg" alt=name).hotel__image
+			.hotel__description
+				.hotel__left
+					span.hotel__name #{name}
+					span.hotel__location #{location}
+				.hotel__right
+					.rating.hotel__raiting
+						- for(var i=0;i<raiting;i++)
+							span.raiting__star
+					span.hotel__price #{price} 
+						span.hotel__currency руб.
