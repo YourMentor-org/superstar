@@ -1,0 +1,25 @@
+{
+  "name": "superstar",
+  "version": "1.0.0",
+  "description": "### Начало работы Для начала разработки необходимо установить все зависимости из nodejs ``` npm i ``` ### Работа с gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YourMentor-org/superstar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YourMentor-org/superstar/issues"
+  },
+  "homepage": "https://github.com/YourMentor-org/superstar#readme",
+  "dependencies": {
+    "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-pug": "^3.3.0"
+  }
+}
