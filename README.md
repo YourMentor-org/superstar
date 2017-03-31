@@ -25,4 +25,4 @@ gulp removedist
 + [fast](https://github.com/FAST-JE)
 + [afiliptsov](https://github.com/afiliptsov)
 + [ramil](https://github.com/rtxrulez)
-+ [kovdimaleks] (https://github.com/dmitrijkov)
++ [kovdimaleks](https://github.com/dmitrijkov)
