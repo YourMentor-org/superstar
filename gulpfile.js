@@ -3,6 +3,9 @@
 var gulp = require('gulp')
 var pug = require('gulp-pug')
 var stylus = require('gulp-stylus')
+var postcss = require('gulp-postcss')
+var sourcemaps = require('gulp-sourcemaps')
+var autoprefixer = require('autoprefixer')
 var del = require('del')
 var browserSync = require('browser-sync').create()
 
@@ -26,7 +29,12 @@ gulp.task('templates', function() {
 
 gulp.task('styles', function() {
     return gulp.src(path.styles + 'main.styl')
+    .pipe(sourcemaps.init())
     .pipe(stylus())
+    .pipe(postcss([
+        autoprefixer()
+    ]))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(path.dist.styles))
     .pipe(browserSync.stream())
 })
