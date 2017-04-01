@@ -13,11 +13,13 @@ gulp
 ```
 Запуск сборки для продакшен
 ```
-gulp build
+gulp build --env production
 ```
+Без карт кода и с минификацией.
+
 Удаление папки с сборкой
 ```
-gulp removedist
+gulp clear
 ```
 
 ## Команда

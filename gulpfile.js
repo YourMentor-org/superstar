@@ -7,6 +7,7 @@ var postcss = require('gulp-postcss')
 var sourcemaps = require('gulp-sourcemaps')
 var autoprefixer = require('autoprefixer')
 var del = require('del')
+var environments = require('gulp-environments')
 var browserSync = require('browser-sync').create()
 
 var path = {
@@ -17,6 +18,8 @@ var path = {
         styles: 'dist/styles/',
     }
 }
+var dev = environments.development
+var prod = environments.production
 
 gulp.task('templates', function() {
     return  gulp.src(path.templates + 'pages/*.pug')
@@ -29,12 +32,12 @@ gulp.task('templates', function() {
 
 gulp.task('styles', function() {
     return gulp.src(path.styles + 'main.styl')
-    .pipe(sourcemaps.init())
+    .pipe(dev(sourcemaps.init()))
     .pipe(stylus())
     .pipe(postcss([
         autoprefixer()
     ]))
-    .pipe(sourcemaps.write('.'))
+    .pipe(dev(sourcemaps.write('.')))
     .pipe(gulp.dest(path.dist.styles))
     .pipe(browserSync.stream())
 })
@@ -52,7 +55,7 @@ gulp.task('server', function() {
     })
 })
 
-gulp.task('removedist', function() {
+gulp.task('clear', function() {
     return del.sync(path.dist.pages)
 })
 
@@ -62,6 +65,6 @@ gulp.task('watch', function() {
     browserSync.reload()
 })
 
-gulp.task('build', ['removedist', 'templates', 'styles'])
+gulp.task('build', ['clear', 'templates', 'styles'])
 
 gulp.task('default', ['templates', 'styles', 'server', 'watch'])
