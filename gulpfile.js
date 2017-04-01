@@ -35,11 +35,11 @@ gulp.task('removedist', function() {
     return del.sync(path.pages)
 })
 
-gulp.task('watch', ['templates', 'server'], function() {
+gulp.task('watch', function() {
     gulp.watch(path.templates + '*.pug', ['templates'])
     browserSync.reload()
 })
 
-gulp.task('prod', ['templates'])
+gulp.task('build', ['removedist', 'templates'])
 
-gulp.task('default', ['watch'])
+gulp.task('default', ['templates', 'server', 'watch'])
