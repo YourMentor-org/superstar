@@ -1,0 +1,175 @@
+html,
+body{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	min-width: 1800px;
+	font-family: 'ProximaNovaRegular';
+}
+
+header{
+	background: url(../../src/img/hotel.jpg) no-repeat 0% 68% / cover;
+	height: 170px;
+	color: #fff;
+}
+
+.container{
+	min-width: 1800px;
+	margin: 0 auto;
+}
+
+.container__header{
+	height: 50px;
+	background: #35363c;
+}
+
+.arrow-back {
+	height: 50px;
+	width: 50px;
+	background: #4b4c51;
+}
+
+.link-back{
+	margin: 15px 0 0 17px;
+}
+
+.header_city{
+	margin: -38px 0 0 70px;
+	font-family: 'ProximaNovaLight';
+}
+
+.header_logo{
+	float: right;
+	margin: -22px 10px 0 0;
+}
+
+.header-date{
+	margin: 25px 0 0 830px;
+}
+
+.site-description{
+	margin: 9px 0 0 790px;
+	letter-spacing: 1px;
+	font-family: 'ProximaNovaBold';
+}
+
+.place{
+	margin: 4px 0 0 834px;
+	font-size: 13px;
+}
+
+.hotel_review{
+	margin: 37px 0 0 819px;
+	font-size: 12px;
+}
+
+.content{
+	height: 158px;
+	font-family: 'ProximaNovaLight';
+}
+
+.content-block_left{
+	height: 158px;
+	width: 1470px;
+	background: #1e1f26;
+	margin: 16px 0 0 20px;
+	color: #fff;
+}
+
+.room-type_left{
+	color: #7d7e80;
+	padding: 9px 0 0 15px;
+	font: 17px 'ProximaNovaBold';
+}
+
+.content-block_right{
+	width: 300px;
+	height: 158px;
+	background: #1e1f26;
+	color: #fff;
+	float: right;
+	margin-top: -158px;
+}
+
+.room_list{
+	margin-top: 5px;
+}
+
+.room-type_right{
+	color: #7d7e80;
+	font: 17px 'ProximaNovaBold';
+	margin: 9px 0 0 13px;
+}
+
+.content-date{
+	margin: 79px 0 0 827px;
+}
+
+.btn-change_date{
+	margin: 14px 0 0 831px;
+	height: 33px;
+	width: 135px;
+	border-radius: 15px;
+	background: #8e8f92;
+	text-transform: uppercase;
+	color: #fff;
+	border: 1px;
+	font: 11px 'ProximaNovaBold';
+}
+
+.information{
+	margin: 42px 0 0 37px;
+	font-family: 'ProximaNovaBold';
+}
+
+.information-list{
+	margin: 5px 0 0;
+}
+
+.services{
+	margin: 42px 0 0 19px;
+	font-family: 'ProximaNovaBold';
+}
+
+.services-list{
+	margin: 8px 0 0;
+}
+
+.additional{
+	margin: 12px 0 0 22px;
+	font-size: 17px;
+}
+
+.additional-link:hover{
+	color: red;
+}
+
+.location{
+	font-family: 'ProximaNovaBold';
+	margin: 17px 0 0 21px;
+}
+
+.location-city{
+	margin: 5px 0 0 17px;
+}
+
+.location-address{
+	margin: -2px 0 0 15px;
+}
+
+.btn-reservation{
+	margin: 244px 0 0 797px;
+}
+
+.btn-reservation_room{
+	border-radius: 23px;
+	color: #fff;
+	background: #db0536;
+	border: 1px;
+	width: 217px;
+	height: 47px;
+	font: 11px 'ProximaNovaLight';
+	letter-spacing: 1px;
+}
