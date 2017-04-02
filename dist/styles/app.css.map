@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.styl","app.css"],"names":[],"mappings":"AAAA;EACI,UAAA;EACA,WAAA;CCCH","file":"app.css","sourcesContent":["body\n    margin 0\n    padding 0\n","body {\n  margin: 0;\n  padding: 0;\n}\n"]}

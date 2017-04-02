@@ -9,6 +9,7 @@ var autoprefixer = require('autoprefixer')
 var concat = require('gulp-concat')
 var uglify = require('gulp-uglify')
 var babel = require('gulp-babel')
+var imagemin = require('gulp-imagemin')
 var del = require('del')
 var environments = require('gulp-environments')
 var browserSync = require('browser-sync').create()
@@ -17,10 +18,12 @@ var path = {
     templates: 'src/templates/',
     styles: 'src/styles/',
     js: 'src/js/',
+    img: 'src/images/',
     dist: {
         pages: 'dist/',
         styles: 'dist/styles/',
-        js: 'dist/js/'
+        js: 'dist/js/',
+        img: 'dist/images/'
     }
 }
 var dev = environments.development
@@ -60,6 +63,18 @@ gulp.task('js', function() {
     .pipe(browserSync.stream())
 })
 
+gulp.task('images', function() {
+    return gulp.src(path.img + '/**/*')
+    .pipe(imagemin({
+        progressive: true, // сжатие jpg
+        // svgoPlugins: [{removeViewBox: false}], // сжатие svg
+        interlanced: true, // сжатие gif
+        optimizationLevel: 3 // степень сжатия
+    }))
+    .pipe(gulp.dest(path.dist.img))
+    .pipe(browserSync.stream())
+})
+
 gulp.task('server', function() {
     browserSync.init({
         server: {
@@ -84,6 +99,6 @@ gulp.task('watch', function() {
     browserSync.reload()
 })
 
-gulp.task('build', ['clear', 'templates', 'styles', 'js'])
+gulp.task('build', ['clear', 'templates', 'styles', 'js', 'images'])
 
 gulp.task('default', ['templates', 'styles', 'js', 'server', 'watch'])
