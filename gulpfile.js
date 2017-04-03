@@ -13,8 +13,6 @@ var imagemin = require('gulp-imagemin')
 var svg2png = require('gulp-svg2png') // Convert SVGs to PNGs
 var svgmin = require('gulp-svgmin') // Minify SVG with SVGO
 var svgspritesheet = require('gulp-svg-spritesheet')
-
-
 var del = require('del')
 var environments = require('gulp-environments')
 var browserSync = require('browser-sync').create()
@@ -36,7 +34,7 @@ var path = {
 var dev = environments.development
 var prod = environments.production
 
-gulp.task('spriteSvg', function () {
+gulp.task('svg-sprite', function () {
 	return gulp.src(path.sprite + '**/*.svg')
 	.pipe(svgspritesheet({
 		cssPathNoSvg: '../images/sprite/svg-sprite.png',
@@ -52,6 +50,7 @@ gulp.task('spriteSvg', function () {
     .pipe(gulp.dest(path.dist.sprite + 'svg-sprite.svg'))
     .pipe(svg2png())
     .pipe(gulp.dest(path.dist.sprite + 'svg-sprite.png'))
+	.pipe(browserSync.stream())
 })
 
 gulp.task('templates', function() {
@@ -121,12 +120,13 @@ gulp.task('clear', function() {
 
 gulp.task('watch', function() {
     gulp.watch(path.templates + '**/*.pug', ['templates'])
-	gulp.watch(path.sprite + '**/*.svg', ['spriteSvg'])
+	gulp.watch(path.sprite + '**/*.svg', ['svg-sprite'])
 	gulp.watch(path.styles + '**/*.styl', ['styles'])
+	gulp.watch(path.images + '**/*.jpg', ['images'])
     gulp.watch(path.js + '**/*.js', ['js'])
     browserSync.reload()
 })
 
-gulp.task('build', ['clear', 'templates', 'spriteSvg', 'styles', 'js', 'images'])
+gulp.task('build', ['clear', 'templates', 'svg-sprite', 'styles', 'js', 'images'])
 
-gulp.task('default', ['templates', 'spriteSvg', 'styles', 'js', 'server', 'watch'])
+gulp.task('default', ['templates', 'svg-sprite', 'styles', 'js', 'server', 'watch'])
