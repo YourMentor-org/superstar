@@ -30,6 +30,9 @@
     "gulp-pug": "^3.3.0",
     "gulp-sourcemaps": "^2.5.0",
     "gulp-stylus": "^2.6.0",
+    "gulp-svg-spritesheet": "0.0.4",
+    "gulp-svg2png": "^2.0.2",
+    "gulp-svgmin": "^1.2.3",
     "gulp-uglify": "^2.1.2"
   }
 }

@@ -10,6 +10,11 @@ var concat = require('gulp-concat')
 var uglify = require('gulp-uglify')
 var babel = require('gulp-babel')
 var imagemin = require('gulp-imagemin')
+var svg2png = require('gulp-svg2png') // Convert SVGs to PNGs
+var svgmin = require('gulp-svgmin') // Minify SVG with SVGO
+var svgspritesheet = require('gulp-svg-spritesheet')
+
+
 var del = require('del')
 var environments = require('gulp-environments')
 var browserSync = require('browser-sync').create()
@@ -19,15 +24,35 @@ var path = {
     styles: 'src/styles/',
     js: 'src/js/',
     img: 'src/images/',
+    sprite: 'src/images/sprite/',
     dist: {
         pages: 'dist/',
         styles: 'dist/styles/',
         js: 'dist/js/',
-        img: 'dist/images/'
+        img: 'dist/images/',
+		sprite: 'dist/images/sprite/'
     }
 }
 var dev = environments.development
 var prod = environments.production
+
+gulp.task('spriteSvg', function () {
+	return gulp.src(path.sprite + '**/*.svg')
+	.pipe(svgspritesheet({
+		cssPathNoSvg: '../images/sprite/svg-sprite.png',
+        cssPathSvg: '../images/sprite/svg-sprite.svg',
+        padding: 0,
+        pixelBase: 16,
+        positioning: 'packed',
+        templateSrc: path.styles + 'templates/_sprite-template.styl',
+        templateDest: path.styles + '_svg-sprite.styl',
+        units: 'em'
+    }))
+    .pipe(svgmin())
+    .pipe(gulp.dest(path.dist.sprite + 'svg-sprite.svg'))
+    .pipe(svg2png())
+    .pipe(gulp.dest(path.dist.sprite + 'svg-sprite.png'))
+})
 
 gulp.task('templates', function() {
     return  gulp.src(path.templates + 'pages/*.pug')
@@ -41,7 +66,9 @@ gulp.task('templates', function() {
 gulp.task('styles', function() {
     return gulp.src(path.styles + 'app.styl')
     .pipe(dev(sourcemaps.init()))
-    .pipe(stylus())
+    .pipe(stylus({
+        'include css': false
+    }))
     .pipe(postcss([
         autoprefixer()
     ]))
@@ -94,11 +121,12 @@ gulp.task('clear', function() {
 
 gulp.task('watch', function() {
     gulp.watch(path.templates + '**/*.pug', ['templates'])
-    gulp.watch(path.styles + '**/*.styl', ['styles'])
+	gulp.watch(path.sprite + '**/*.svg', ['spriteSvg'])
+	gulp.watch(path.styles + '**/*.styl', ['styles'])
     gulp.watch(path.js + '**/*.js', ['js'])
     browserSync.reload()
 })
 
-gulp.task('build', ['clear', 'templates', 'styles', 'js', 'images'])
+gulp.task('build', ['clear', 'templates', 'spriteSvg', 'styles', 'js', 'images'])
 
-gulp.task('default', ['templates', 'styles', 'js', 'server', 'watch'])
+gulp.task('default', ['templates', 'spriteSvg', 'styles', 'js', 'server', 'watch'])

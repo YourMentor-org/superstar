@@ -1,3 +1,4 @@
+include ../mixins/sprite
 block config
     - var pageTitle = 'Home'
     - var pageDescription = 'Home descr'
@@ -6,18 +7,17 @@ block config
 html(lang="ru")
     head
         meta(charset="UTF-8")
-        title #{pageTitle} 
+        title #{pageTitle}
         meta(name="description" content=pageDescription)
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1")
-        link(rel="stylesheet" href="styles/app.css") 
+        link(rel="stylesheet" href="styles/app.css")
     body
         .container
-            block header 
+            block header
                 include ../partials/header
             block main
-                h1 Hello 
+                h1 Hello
             block footer
-                
+
             block scripts
-                

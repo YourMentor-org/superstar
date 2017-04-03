@@ -1,0 +1,19 @@
+.sprite:before
+    content ' '
+    background-image url("../images/sprite/svg-sprite.svg")
+    background-repeat no-repeat
+    background-size 2.375em 1.25em
+    display inline-block
+    .no-svg &
+        background-image url("../images/sprite/svg-sprite.png")
+
+.sprite__chat:before
+    @extend .sprite:before
+    background-position 0em 0em
+    width 1.25em
+    height 1.25em
+.sprite__phone:before
+    @extend .sprite:before
+    background-position -1.25em 0em
+    width 1.125em
+    height 1.125em
