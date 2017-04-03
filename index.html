@@ -9,21 +9,21 @@
 </head>
 <body>
 	<header class="header">
-		<div class="container container__header">
+		<div class="container container_header">
 			<div class="arrow-back">
 			<a href="#" ><img class="link-back" src="src/img/white-arrow-left.svg" alt="back"></a>
 			</div>
-				<div class="header_city">Москва, Россия</div>
-			<div class="header_logo"><a href="#" class="jcb-logo"><img src="src/img/jcb-logo.svg" alt="JCB"></a>
+				<div class="header__city">Москва, Россия</div>
+			<div class="header__logo"><a href="#" class="jcb-logo"><img src="src/img/jcb-logo.svg" alt="JCB"></a>
 			</div>
-			<div class="header-date">12-13 марта 1<img src="src/img/moon-white.png"> 2<img src="src/img/adult-white.png"> 1<img src="src/img/child-white.png"></div>
-			<div class="site-description">Гостиница Шератон Москва</div>
-			<div class="place">Аэропорт Шереметьево</div>
+			<div class="header__date">12-13 марта 1<img src="src/img/moon-white.png"> 2<img src="src/img/adult-white.png"> 1<img src="src/img/child-white.png"></div>
+			<div class="header__site-description">Гостиница Шератон Москва</div>
+			<div class="header__place">Аэропорт Шереметьево</div>
 		</div>
 	</header>
 
 	<div class="container container_main-block">
-		<div class="hotel_rating">
+		<div class="rating">
 			<div class="raiting__star"></div>
 			<div class="raiting__star"></div>
 			<div class="raiting__star"></div>
@@ -34,7 +34,7 @@
 
 		<div class="content">
 			<div class="content-block_left">
-			<div class="room-type_left">Standart room</div>
+			<div class="room-type">Standart room</div>
 				<ul class="room_list">
 					<li class="room_list-item">Стандартные номера - 32 м.кв</li>
 					<li class="room_list-item">Проживание 2 взрослых и 1 ребенка</li>
@@ -45,7 +45,7 @@
 				</ul>
 			</div>
 			<div class="content-block_right">
-				<div class="room-type_right">Standart room</div>
+				<div class="room-type">Standart room</div>
 				<ul class="room_list">
 					<li class="room_list-item">Стандартные номера - 32 м.кв</li>
 					<li class="room_list-item">Проживание 2 взрослых и 1 ребенка</li>
@@ -57,28 +57,34 @@
 			</div>
 		</div>
 		<div class="content-date">12-13 марта 1<img src="src/img/moon-black.png"> 2<img src="src/img/adult-black.png"> 1<img src="src/img/child-black.png"></div>
-		<div class="btn-change">
-			<button class="btn-change_date">изменить</button>
+		<div class="btn btn_change">
+			<button class="btn_change-date">изменить</button>
 		</div>
-		<div class="information">Standart room</div>
-			<ul class="information-list">
-				<li class="information-list_item">Заселение в номера с 14:00</li>
-				<li class="information-list_item">Выезд из номера до 12:00</li>
-				<li class="information-list_item">Номеров</li>
+		<div class="information">
+			<p class="information__standart-room">Standart room</p>
+			<ul class="information__list">
+				<li class="information__list-item">Заселение в номера с 14:00</li>
+				<li class="information__list-item">Выезд из номера до 12:00</li>
+				<li class="information__list-item">Номеров</li>
 			</ul>
-			<div class="services">Услуги в отеле</div>
-				<ul class="services-list">
-					<li class="services-list_item">Круглосуточная стойка регистрации</li>
-					<li class="services-list_item">Зоны общественного пользования с кондиционированием</li>
-					<li class="services-list_item">Номера для аллергиков</li>
-					<li class="services-list_item">Банкомат на территории отеля</li>
-					<li class="services-list_item">Бар</li>
+		</div>	
+			<div class="services">
+				<p class="services__hotel">Услуги в отеле</p>
+				<ul class="services__list">
+					<li class="services__list_item">Круглосуточная стойка регистрации</li>
+					<li class="services__list_item">Зоны общественного пользования с кондиционированием</li>
+					<li class="services__list_item">Номера для аллергиков</li>
+					<li class="services__list_item">Банкомат на территории отеля</li>
+					<li class="services__list_item">Бар</li>
 				</ul>
+			</div>	
 				<div class="additional"><a href="#" class="additional-link">Подробнее</a></div>
-			<div class="location">Расположение</div>
-			<p class="location-city">141411, Химки</p>
-			<p class="location-address">Международные шоссе, 28-б, стр. 5</p>
-			<div class="map"></div>
+			<div class="location">
+				<p class="location__disposition">Расположение</p>
+				<p class="location__city">141411, Химки</p>
+				<p class="location__address">Международные шоссе, 28-б, стр. 5</p>
+				<div class="location__map"></div>
+			</div>
 			<div class="btn-reservation">
 				<button class="btn-reservation_room">забронировать</button>
 			</div>

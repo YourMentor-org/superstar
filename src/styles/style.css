@@ -6,7 +6,7 @@ body{
 
 body{
 	min-width: 1800px;
-	font-family: 'ProximaNovaRegular';
+	font-family: 'ProximaNovaRegular', Helvetica, sans-serif;
 }
 
 header{
@@ -20,7 +20,7 @@ header{
 	margin: 0 auto;
 }
 
-.container__header{
+.container_header{
 	height: 50px;
 	background: #35363c;
 }
@@ -35,27 +35,27 @@ header{
 	margin: 15px 0 0 17px;
 }
 
-.header_city{
+.header__city{
 	margin: -38px 0 0 70px;
-	font-family: 'ProximaNovaLight';
+	font-family: 'ProximaNovaLight', Helvetica, sans-serif;
 }
 
-.header_logo{
+.header__logo{
 	float: right;
 	margin: -22px 10px 0 0;
 }
 
-.header-date{
+.header__date{
 	margin: 25px 0 0 830px;
 }
 
-.site-description{
+.header__site-description{
 	margin: 9px 0 0 790px;
 	letter-spacing: 1px;
-	font-family: 'ProximaNovaBold';
+	font-family: 'ProximaNovaBold', Helvetica, sans-serif;
 }
 
-.place{
+.header__place{
 	margin: 4px 0 0 834px;
 	font-size: 13px;
 }
@@ -67,7 +67,7 @@ header{
 
 .content{
 	height: 158px;
-	font-family: 'ProximaNovaLight';
+	font-family: 'ProximaNovaLight', Helvetica, sans-serif;
 }
 
 .content-block_left{
@@ -78,10 +78,10 @@ header{
 	color: #fff;
 }
 
-.room-type_left{
+.room-type{
 	color: #7d7e80;
 	padding: 9px 0 0 15px;
-	font: 17px 'ProximaNovaBold';
+	font: 17px 'ProximaNovaBold', Helvetica, sans-serif;
 }
 
 .content-block_right{
@@ -97,17 +97,17 @@ header{
 	margin-top: 5px;
 }
 
-.room-type_right{
+.room-type{
 	color: #7d7e80;
-	font: 17px 'ProximaNovaBold';
-	margin: 9px 0 0 13px;
+	font: 17px 'ProximaNovaBold', Helvetica, sans-serif;
+	margin: 9px 0 0 15px;
 }
 
 .content-date{
 	margin: 79px 0 0 827px;
 }
 
-.btn-change_date{
+.btn_change-date{
 	margin: 14px 0 0 831px;
 	height: 33px;
 	width: 135px;
@@ -116,24 +116,24 @@ header{
 	text-transform: uppercase;
 	color: #fff;
 	border: 1px;
-	font: 11px 'ProximaNovaBold';
+	font: 11px 'ProximaNovaBold', Helvetica, sans-serif;
 }
 
-.information{
+.information__standart-room{
 	margin: 42px 0 0 37px;
-	font-family: 'ProximaNovaBold';
+	font-family: 'ProximaNovaBold', Helvetica, sans-serif;
 }
 
-.information-list{
+.information__list{
 	margin: 5px 0 0;
 }
 
-.services{
+.services__hotel{
 	margin: 42px 0 0 19px;
-	font-family: 'ProximaNovaBold';
+	font-family: 'ProximaNovaBold', Helvetica, sans-serif;
 }
 
-.services-list{
+.services__list{
 	margin: 8px 0 0;
 }
 
@@ -146,16 +146,16 @@ header{
 	color: red;
 }
 
-.location{
-	font-family: 'ProximaNovaBold';
+.location__disposition{
+	font-family: 'ProximaNovaBold', Helvetica, sans-serif;
 	margin: 17px 0 0 21px;
 }
 
-.location-city{
+.location__city{
 	margin: 5px 0 0 17px;
 }
 
-.location-address{
+.location__address{
 	margin: -2px 0 0 15px;
 }
 
@@ -164,12 +164,14 @@ header{
 }
 
 .btn-reservation_room{
+	-moz-border-radius: 23px;
+	-webkit-border-radius: 23px;
 	border-radius: 23px;
 	color: #fff;
 	background: #db0536;
 	border: 1px;
 	width: 217px;
 	height: 47px;
-	font: 11px 'ProximaNovaLight';
-	letter-spacing: 1px;
+	font: .9em 'ProximaNovaLight', Helvetica, sans-serif;
+	letter-spacing: .1em;
 }
