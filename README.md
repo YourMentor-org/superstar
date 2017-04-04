@@ -22,6 +22,9 @@ gulp build --env production
 gulp clear
 ```
 
+В качестве примера работы с svg спрайтами взят проект https://github.com/Enkil/template-frontend
+Спасибо!
+
 ## Команда
 + [brainstorm](https://github.com/SS-brainstorm/)
 + [fast](https://github.com/FAST-JE)

@@ -13,6 +13,7 @@ var imagemin = require('gulp-imagemin')
 var svg2png = require('gulp-svg2png') // Convert SVGs to PNGs
 var svgmin = require('gulp-svgmin') // Minify SVG with SVGO
 var svgspritesheet = require('gulp-svg-spritesheet')
+var cssnano = require('cssnano')
 var del = require('del')
 var environments = require('gulp-environments')
 var browserSync = require('browser-sync').create()
@@ -69,7 +70,11 @@ gulp.task('styles', function() {
         'include css': false
     }))
     .pipe(postcss([
-        autoprefixer()
+        autoprefixer(),
+        cssnano({
+            safe:false,
+            autoprefixer: false
+        })
     ]))
     .pipe(dev(sourcemaps.write('.')))
     .pipe(gulp.dest(path.dist.styles))
