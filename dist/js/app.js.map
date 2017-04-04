@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.js"],"names":["console","log","i"],"mappings":";;AAAAA,QAAQC,GAAR,CAAY,UAAZ;AACA,IAAMC,IAAI,MAAV;AACAF,QAAQC,GAAR,CAAYC,CAAZ","file":"app.js","sourcesContent":["console.log('this app');\nconst i = 'test';\nconsole.log(i);\n"]}
