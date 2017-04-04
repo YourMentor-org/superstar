@@ -72,6 +72,9 @@ gulp clear
 npm run clear
 ```
 
+Форматирование js проверяется плагином eslint. Не стоит комитит js если проверка не пррошла. Настройки по умолчанию для стиля кода взяты у проекта `tars`:
+https://github.com/tars/tars/blob/master/.eslintrc
+
 В качестве примера работы с svg спрайтами взят проект https://github.com/Enkil/template-frontend
 Спасибо!
 

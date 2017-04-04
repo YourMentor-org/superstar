@@ -14,6 +14,7 @@ var svg2png = require('gulp-svg2png') // Convert SVGs to PNGs
 var svgmin = require('gulp-svgmin') // Minify SVG with SVGO
 var svgspritesheet = require('gulp-svg-spritesheet')
 var cssnano = require('cssnano')
+var eslint = require('gulp-eslint')
 var del = require('del')
 var environments = require('gulp-environments')
 var browserSync = require('browser-sync').create()
@@ -84,6 +85,8 @@ gulp.task('styles', function() {
 gulp.task('js', function() {
     return gulp.src(path.js + '**/*.js')
     .pipe(dev(sourcemaps.init()))
+    .pipe(eslint())
+    .pipe(eslint.format())
     .pipe(babel({
         presets: ['es2015']
     }))
