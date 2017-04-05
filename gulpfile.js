@@ -137,4 +137,4 @@ gulp.task('watch', function() {
 
 gulp.task('build', ['clear', 'templates', 'svg-sprite', 'styles', 'js', 'images'])
 
-gulp.task('default', ['templates', 'svg-sprite', 'styles', 'js', 'server', 'watch'])
+gulp.task('default', ['templates', 'svg-sprite', 'styles', 'js', 'images', 'server', 'watch'])
