@@ -36,6 +36,7 @@ var path = {
 var dev = environments.development;
 var prod = environments.production;
 
+// Массив плагинов postcss для продакшен версии
 var postcss_for_prod = [
     autoprefixer(),
     cssnano({
@@ -43,9 +44,8 @@ var postcss_for_prod = [
         autoprefixer: false
     })
 ];
-var postcss_for_dev = [
-    autoprefixer()
-];
+// Массив плагинов postcss для разработки
+var postcss_for_dev = [];
 
 gulp.task('svg-sprite', function () {
 	return gulp.src(path.sprite + '**/*.svg')
@@ -85,9 +85,7 @@ gulp.task('styles', function() {
     }).on('error', function(error) {
         console.log(error);
     }))
-    .pipe(postcss(
-        dev(postcss_for_dev)
-    ))
+    .pipe(prod(postcss(postcss_for_prod))) // PostCss
     .pipe(dev(sourcemaps.write('.')))
     .pipe(gulp.dest(path.dist.styles))
     .pipe(browserSync.stream());
