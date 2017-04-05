@@ -2,7 +2,7 @@
     content ' '
     background-image url("../images/sprite/svg-sprite.svg")
     background-repeat no-repeat
-    background-size 2.875em 2.6875em
+    background-size 4.25em 3.0625em
     display inline-block
     .no-svg &
         background-image url("../images/sprite/svg-sprite.png")
@@ -12,28 +12,38 @@
     background-position 0em 0em
     width 2.0625em
     height 1.5625em
-.sprite__arrow:before
+.sprite__plus:before
     @extend .sprite:before
     background-position -2.0625em 0em
+    width 1.5em
+    height 1.5em
+.sprite__minus:before
+    @extend .sprite:before
+    background-position 0em -1.5625em
+    width 1.5em
+    height 0.25em
+.sprite__arrow:before
+    @extend .sprite:before
+    background-position 0em -1.8125em
     width 0.8125em
     height 1.25em
 .sprite__piple:before
     @extend .sprite:before
-    background-position 0em -1.5625em
+    background-position -0.8125em -1.8125em
     width 0.4375em
     height 1.125em
 .sprite__search:before
     @extend .sprite:before
-    background-position -0.4375em -1.5625em
+    background-position -1.25em -1.8125em
     width 0.875em
     height 0.875em
 .sprite__moon:before
     @extend .sprite:before
-    background-position -1.3125em -1.5625em
+    background-position -2.125em -1.8125em
     width 0.8125em
     height 0.875em
 .sprite__star:before
     @extend .sprite:before
-    background-position -2.125em -1.5625em
+    background-position -3.5625em 0em
     width 0.6875em
     height 0.6875em

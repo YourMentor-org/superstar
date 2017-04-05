@@ -1,5 +1,7 @@
 .sprite:before,
 .sprite__logo:before,
+.sprite__plus:before,
+.sprite__minus:before,
 .sprite__arrow:before,
 .sprite__piple:before,
 .sprite__search:before,
@@ -8,11 +10,13 @@
   content: ' ';
   background-image: url("../images/sprite/svg-sprite.svg");
   background-repeat: no-repeat;
-  background-size: 2.875em 2.6875em;
+  background-size: 4.25em 3.0625em;
   display: inline-block;
 }
 .no-svg .sprite:before,
 .no-svg .sprite__logo:before,
+.no-svg .sprite__plus:before,
+.no-svg .sprite__minus:before,
 .no-svg .sprite__arrow:before,
 .no-svg .sprite__piple:before,
 .no-svg .sprite__search:before,
@@ -25,38 +29,131 @@
   width: 2.0625em;
   height: 1.5625em;
 }
-.sprite__arrow:before {
+.sprite__plus:before {
   background-position: -2.0625em 0em;
+  width: 1.5em;
+  height: 1.5em;
+}
+.sprite__minus:before {
+  background-position: 0em -1.5625em;
+  width: 1.5em;
+  height: 0.25em;
+}
+.sprite__arrow:before {
+  background-position: 0em -1.8125em;
   width: 0.8125em;
   height: 1.25em;
 }
 .sprite__piple:before {
-  background-position: 0em -1.5625em;
+  background-position: -0.8125em -1.8125em;
   width: 0.4375em;
   height: 1.125em;
 }
 .sprite__search:before {
-  background-position: -0.4375em -1.5625em;
+  background-position: -1.25em -1.8125em;
   width: 0.875em;
   height: 0.875em;
 }
 .sprite__moon:before {
-  background-position: -1.3125em -1.5625em;
+  background-position: -2.125em -1.8125em;
   width: 0.8125em;
   height: 0.875em;
 }
 .sprite__star:before {
-  background-position: -2.125em -1.5625em;
+  background-position: -3.5625em 0em;
   width: 0.6875em;
   height: 0.6875em;
 }
-.header__prev {
-  width: 3.125em;
-  height: 3.125em;
-  line-height: 3.125em;
+.btn {
+  display: inline-block;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.68em;
+  border-radius: 3.63em;
+  padding: 1.36em 3.63em;
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+}
+.btn:hover,
+.btn:focus {
+  background-color: rgba(255,255,255,0.3);
+}
+.btn + .btn {
+  margin-left: 0.93em;
+}
+.counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.counter__btn {
+  width: 3.3em;
+  height: 3.3em;
+  padding: 0.93em;
+  text-align: center;
+  font-size: 0.88em;
+  line-height: 0;
+}
+.counter__btn:hover,
+.counter__btn:focus,
+.counter__btn_active {
+  background-color: #db0536;
+}
+.counter__number {
+  padding: 0 0.41em;
+  border: 0;
+  width: 1.5em;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: transparent;
+  font-size: 2.5em;
+  text-align: center;
+  color: #fff;
 }
 .header-nav {
-  height: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 3.125em;
+  background-color: rgba(255,255,255,0.05);
+  color: #fff;
+}
+.header-nav__prev {
+  width: 3.125em;
+  height: 3.125em;
+  padding-top: 0.8em;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgba(255,255,255,0.1);
+}
+.header-nav__prev:hover,
+.header-nav__prev:focus {
+  background-color: rgba(255,255,255,0.2);
+}
+.header-nav__logo {
+  display: inline-block;
+  margin-right: 0.93em;
+  text-decoration: none;
+  color: inherit;
+}
+* {
+  box-sizing: border-box;
 }
 html,
 body {
@@ -69,6 +166,23 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 16px;
+  font-family: Arial;
+}
+.search-page {
+  padding: 1.56em 1.25em;
+  text-align: center;
+  color: #fff;
+}
+.search-page__btn {
+  width: 13.5em;
+  padding-left: 0;
+  padding-right: 0;
+}
+.search-page__subhead {
+  margin-top: 2.075em;
+  margin-bottom: 1.025em;
+  font-size: 16px;
+  color: #fff;
 }
 
 /*# sourceMappingURL=app.css.map */

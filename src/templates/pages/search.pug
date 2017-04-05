@@ -1,4 +1,22 @@
 extends ../layout/main
 
 block main
-    .sprite__logo
+    form.search-page 
+        button.btn.search-page__btn Сегодня
+        button.btn.search-page__btn Выбрать дату
+        .search-page__subhead
+            | Гостей взрослых
+        .counter
+            button.btn.counter__btn
+                .sprite__plus
+            input.counter__number(type='text', value='2', disabled)
+            button.btn.counter__btn.counter__btn_active
+                .sprite__minus
+        .search-page__subhead
+            | Детей
+        .counter
+            button.btn.counter__btn
+                .sprite__plus
+            .counter__number 1
+            button.btn.counter__btn
+                .sprite__minus

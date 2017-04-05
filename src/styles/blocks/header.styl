@@ -1,0 +1,28 @@
+$header-height = 3.125em
+$header-color = #fff
+$header-bg = rgba(255, 255, 255, .05)
+$header-prev-bg = rgba(255, 255, 255, 0.1)
+$header-prev-bg-hover = rgba(255, 255, 255, 0.2)
+
+.header-nav
+    display flex
+    justify-content space-between
+    align-items center
+    width 100%
+    height $header-height
+    background-color $header-bg
+    color $header-color
+    &__prev
+        width $header-height
+        height $header-height
+        padding-top .8em
+        text-align center
+        cursor pointer
+        background-color $header-prev-bg
+        &:hover, &:focus
+            background-color $header-prev-bg-hover
+    &__logo
+        display inline-block
+        margin-right .93em
+        text-decoration none
+        color inherit
