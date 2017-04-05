@@ -1,23 +1,23 @@
-'use strict'
+'use strict';
 
-var gulp = require('gulp')
-var pug = require('gulp-pug')
-var stylus = require('gulp-stylus')
-var postcss = require('gulp-postcss')
-var sourcemaps = require('gulp-sourcemaps')
-var autoprefixer = require('autoprefixer')
-var concat = require('gulp-concat')
-var uglify = require('gulp-uglify')
-var babel = require('gulp-babel')
-var imagemin = require('gulp-imagemin')
-var svg2png = require('gulp-svg2png') // Convert SVGs to PNGs
-var svgmin = require('gulp-svgmin') // Minify SVG with SVGO
-var svgspritesheet = require('gulp-svg-spritesheet')
-var cssnano = require('cssnano')
-var eslint = require('gulp-eslint')
-var del = require('del')
-var environments = require('gulp-environments')
-var browserSync = require('browser-sync').create()
+var gulp = require('gulp');
+var pug = require('gulp-pug');
+var stylus = require('gulp-stylus');
+var postcss = require('gulp-postcss');
+var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('autoprefixer');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var babel = require('gulp-babel');
+var imagemin = require('gulp-imagemin');
+var svg2png = require('gulp-svg2png'); // Convert SVGs to PNGs
+var svgmin = require('gulp-svgmin'); // Minify SVG with SVGO
+var svgspritesheet = require('gulp-svg-spritesheet');
+var cssnano = require('cssnano');
+var eslint = require('gulp-eslint');
+var del = require('del');
+var environments = require('gulp-environments');
+var browserSync = require('browser-sync').create();
 
 var path = {
     templates: 'src/templates/',
@@ -32,9 +32,9 @@ var path = {
         img: 'dist/images/',
 		sprite: 'dist/images/sprite/'
     }
-}
-var dev = environments.development
-var prod = environments.production
+};
+var dev = environments.development;
+var prod = environments.production;
 
 gulp.task('svg-sprite', function () {
 	return gulp.src(path.sprite + '**/*.svg')
@@ -52,8 +52,8 @@ gulp.task('svg-sprite', function () {
     .pipe(gulp.dest(path.dist.sprite + 'svg-sprite.svg'))
     .pipe(svg2png())
     .pipe(gulp.dest(path.dist.sprite + 'svg-sprite.png'))
-	.pipe(browserSync.stream())
-})
+	.pipe(browserSync.stream());
+});
 
 gulp.task('templates', function() {
     return  gulp.src(path.templates + 'pages/*.pug')
@@ -61,8 +61,8 @@ gulp.task('templates', function() {
 		pretty: true
 	}))
     .pipe(gulp.dest(path.dist.pages))
-    .pipe(browserSync.stream())
-})
+    .pipe(browserSync.stream());
+});
 
 gulp.task('styles', function() {
     return gulp.src(path.styles + 'app.styl')
@@ -79,8 +79,8 @@ gulp.task('styles', function() {
     ]))
     .pipe(dev(sourcemaps.write('.')))
     .pipe(gulp.dest(path.dist.styles))
-    .pipe(browserSync.stream())
-})
+    .pipe(browserSync.stream());
+});
 
 gulp.task('js', function() {
     return gulp.src(path.js + '**/*.js')
@@ -94,8 +94,8 @@ gulp.task('js', function() {
     .pipe(prod(uglify()))
     .pipe(dev(sourcemaps.write('.')))
     .pipe(gulp.dest(path.dist.js))
-    .pipe(browserSync.stream())
-})
+    .pipe(browserSync.stream());
+});
 
 gulp.task('images', function() {
     return gulp.src(path.img + '/**/*')
@@ -106,8 +106,8 @@ gulp.task('images', function() {
         optimizationLevel: 3 // степень сжатия
     }))
     .pipe(gulp.dest(path.dist.img))
-    .pipe(browserSync.stream())
-})
+    .pipe(browserSync.stream());
+});
 
 gulp.task('server', function() {
     browserSync.init({
@@ -118,13 +118,12 @@ gulp.task('server', function() {
         host: 'localhost',
         logPrefix: 'frontend',
         open: false
-        // reloadDelay: 3000
-    })
-})
+    });
+});
 
 gulp.task('clear', function() {
-    return del.sync(path.dist.pages)
-})
+    return del.sync(path.dist.pages);
+});
 
 gulp.task('watch', function() {
     gulp.watch(path.templates + '**/*.pug', ['templates'])
@@ -132,9 +131,9 @@ gulp.task('watch', function() {
 	gulp.watch(path.styles + '**/*.styl', ['styles'])
 	gulp.watch(path.images + '**/*.jpg', ['images'])
     gulp.watch(path.js + '**/*.js', ['js'])
-    browserSync.reload()
-})
+    browserSync.reload();
+});
 
-gulp.task('build', ['clear', 'templates', 'svg-sprite', 'styles', 'js', 'images'])
+gulp.task('build', ['clear', 'templates', 'svg-sprite', 'styles', 'js', 'images']);
 
-gulp.task('default', ['templates', 'svg-sprite', 'styles', 'js', 'images', 'server', 'watch'])
+gulp.task('default', ['templates', 'svg-sprite', 'styles', 'js', 'images', 'server', 'watch']);
