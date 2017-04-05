@@ -101,7 +101,7 @@ gulp.task('images', function() {
     return gulp.src(path.img + '/**/*')
     .pipe(imagemin({
         progressive: true, // сжатие jpg
-        // svgoPlugins: [{removeViewBox: false}], // сжатие svg
+        svgoPlugins: [{removeViewBox: false}], // сжатие svg
         interlanced: true, // сжатие gif
         optimizationLevel: 3 // степень сжатия
     }))
