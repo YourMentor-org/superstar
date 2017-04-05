@@ -36,6 +36,17 @@ var path = {
 var dev = environments.development;
 var prod = environments.production;
 
+var postcss_for_prod = [
+    autoprefixer(),
+    cssnano({
+        safe: false,
+        autoprefixer: false
+    })
+];
+var postcss_for_dev = [
+    autoprefixer()
+];
+
 gulp.task('svg-sprite', function () {
 	return gulp.src(path.sprite + '**/*.svg')
 	.pipe(svgspritesheet({
@@ -59,7 +70,9 @@ gulp.task('templates', function() {
     return  gulp.src(path.templates + 'pages/*.pug')
     .pipe(pug({
 		pretty: true
-	}))
+	}).on('error', function(error) {
+        console.log(error);
+    }))
     .pipe(gulp.dest(path.dist.pages))
     .pipe(browserSync.stream());
 });
@@ -69,14 +82,12 @@ gulp.task('styles', function() {
     .pipe(dev(sourcemaps.init()))
     .pipe(stylus({
         'include css': false
+    }).on('error', function(error) {
+        console.log(error);
     }))
-    .pipe(postcss([
-        autoprefixer(),
-        cssnano({
-            safe:false,
-            autoprefixer: false
-        })
-    ]))
+    .pipe(postcss(
+        dev(postcss_for_dev)
+    ))
     .pipe(dev(sourcemaps.write('.')))
     .pipe(gulp.dest(path.dist.styles))
     .pipe(browserSync.stream());
