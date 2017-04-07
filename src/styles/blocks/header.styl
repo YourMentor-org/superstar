@@ -3,14 +3,16 @@ $header-color = #fff
 $header-bg = rgba(255, 255, 255, .05)
 $header-prev-bg = rgba(255, 255, 255, 0.1)
 $header-prev-bg-hover = rgba(255, 255, 255, 0.2)
-
+.header
+    background-color $header-bg
 .header-nav
     display flex
     justify-content space-between
     align-items center
     width 100%
+    max-width 30em
+    margin 0 auto
     height $header-height
-    background-color $header-bg
     color $header-color
     &__prev
         width $header-height

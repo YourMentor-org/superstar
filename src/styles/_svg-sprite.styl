@@ -1,49 +1,74 @@
+.sprite__logo
+    display inline-block
+    font-size 1em
+.sprite__plus
+    display inline-block
+    font-size 1em
+.sprite__minus
+    display inline-block
+    font-size 1em
+.sprite__arrow
+    display inline-block
+    font-size 1em
+.sprite__piple
+    display inline-block
+    font-size 1em
+.sprite__search
+    display inline-block
+    font-size 1em
+.sprite__moon
+    display inline-block
+    font-size 1em
+.sprite__star
+    display inline-block
+    font-size 1em
+
 .sprite:before
     content ' '
     background-image url("../images/sprite/svg-sprite.svg")
     background-repeat no-repeat
-    background-size 4.25em 3.0625em
+    background-size 8.125em 6.6875em
     display inline-block
     .no-svg &
         background-image url("../images/sprite/svg-sprite.png")
 
 .sprite__logo:before
     @extend .sprite:before
-    background-position 0em 0em
+    background-position -0.9375em -0.9375em
     width 2.0625em
     height 1.5625em
 .sprite__plus:before
     @extend .sprite:before
-    background-position -2.0625em 0em
+    background-position -3.9375em -0.9375em
     width 1.5em
     height 1.5em
 .sprite__minus:before
     @extend .sprite:before
-    background-position 0em -1.5625em
+    background-position -0.9375em -3.4375em
     width 1.5em
     height 0.25em
 .sprite__arrow:before
     @extend .sprite:before
-    background-position 0em -1.8125em
+    background-position -6.375em -0.9375em
     width 0.8125em
     height 1.25em
 .sprite__piple:before
     @extend .sprite:before
-    background-position -0.8125em -1.8125em
+    background-position -0.9375em -4.625em
     width 0.4375em
     height 1.125em
 .sprite__search:before
     @extend .sprite:before
-    background-position -1.25em -1.8125em
+    background-position -2.3125em -4.625em
     width 0.875em
     height 0.875em
 .sprite__moon:before
     @extend .sprite:before
-    background-position -2.125em -1.8125em
+    background-position -4.125em -4.625em
     width 0.8125em
     height 0.875em
 .sprite__star:before
     @extend .sprite:before
-    background-position -3.5625em 0em
+    background-position -5.875em -4.625em
     width 0.6875em
     height 0.6875em

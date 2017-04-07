@@ -52,7 +52,7 @@ gulp.task('svg-sprite', function () {
 	.pipe(svgspritesheet({
 		cssPathNoSvg: '../images/sprite/svg-sprite.png',
         cssPathSvg: '../images/sprite/svg-sprite.svg',
-        padding: 0,
+        padding: 15,
         pixelBase: 16,
         positioning: 'packed',
         templateSrc: path.styles + 'templates/_sprite-template.styl',
