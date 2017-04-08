@@ -1,23 +1,19 @@
-{{#sprites}}
-.sprite__{{fileName}}
+.sprite
     display inline-block
     font-size 1em
-{{/sprites}}
-
-.sprite:before
-    content ' '
-    background-image url("{{{cssPathSvg}}}")
-    background-repeat no-repeat
-    background-size {{width}}{{units}} {{height}}{{units}}
-    display inline-block
-    {{#cssPathNoSvg}}
-    .no-svg &
-        background-image url("{{{cssPathNoSvg}}}")
-    {{/cssPathNoSvg}}
+    &::before
+        content ' '
+        display inline-block
+        background-image url("{{{cssPathSvg}}}")
+        background-repeat no-repeat
+        background-size {{width}}{{units}} {{height}}{{units}}
+        {{#cssPathNoSvg}}
+        .no-svg &
+            background-image url("{{{cssPathNoSvg}}}")
+        {{/cssPathNoSvg}}
 
 {{#sprites}}
-.sprite__{{fileName}}:before
-    @extend .sprite:before
+.sprite_{{fileName}}::before
     background-position {{x}}{{units}} {{y}}{{units}}
     width {{w}}{{units}}
     height {{h}}{{units}}
