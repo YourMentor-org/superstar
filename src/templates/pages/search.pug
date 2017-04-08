@@ -1,0 +1,26 @@
+extends ../layout/main
+
+block main
+    form.search-page
+        .search-page__header
+            button.btn.search-page__btn Сегодня
+            button.btn.search-page__btn Выбрать дату
+        .search-page__content
+            .search-page__subhead
+                | Гостей взрослых
+            .counter
+                button.btn.counter__btn
+                    span.sprite__plus
+                input.counter__number(type='text', value='2', disabled)
+                button.btn.counter__btn.counter__btn_active
+                    span.sprite__minus
+            .search-page__subhead
+                | Детей
+            .counter
+                button.btn.counter__btn
+                    span.sprite__plus
+                input.counter__number(type='text', value='2', disabled)
+                button.btn.counter__btn
+                    span.sprite__minus
+        .search-page__footer
+            button.btn.btn__submit(type='submit') Показать отели и цены
