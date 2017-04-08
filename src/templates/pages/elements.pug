@@ -1,0 +1,28 @@
+extends ../layout/main
+
+block main
+    .calendar
+        .calendar__header
+            .calendar__month
+                button.btn.calendar__prev
+                    span.sprite.sprite__prev
+                select.calendar__month-select
+                    option Январь
+                    option Февраль
+                    option Март
+                    option Апрель
+                button.btn.calendar__next
+                    span.sprite.sprite__next
+            .calendar__week
+                .calendar__day пн
+                .calendar__day вт
+                .calendar__day ср
+                .calendar__day чт
+                .calendar__day пт
+                .calendar__day сб
+                .calendar__day вс
+        .calendar__content
+            - i=1
+            while i < 36
+                .calendar__day= i++
+                
