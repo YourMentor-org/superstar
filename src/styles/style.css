@@ -69,20 +69,13 @@ body{
 .icons{
 	position: relative;
 	left: 7px;
+	display: inline-block;
 }
 
 .header__location{
 	text-align: center;
 	font-size: 12px;
 	margin-top: 4px;
-}
-
-.raiting{
-	margin: 15px 0 0 123px;
-}
-
-.raiting__star{
-	display: inline-block;
 }
 
 .hotel_review{
@@ -191,4 +184,38 @@ body{
 	border-radius: 28px;
 	margin: 44px 0 0 52px;
 	padding: 0 61px 0 64px;
+}
+
+.rating {
+  display: inline-block;
+  margin-left: 122px;
+  padding-top: 13px; 
+}
+
+input { 
+  display: none; }
+
+label.star {
+  float: right;
+  font-size: 16px;
+  padding: 0 1px 0 1px;
+  color: #444;
+  transition: all .2s;
+}
+
+input.star:checked ~ label.star:before {
+  content: '\2605';
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+}
+
+input.star-1:checked ~ label.star:before {
+ color: #F62; }
+
+label.star:before {
+  content: '\2605';
 }
