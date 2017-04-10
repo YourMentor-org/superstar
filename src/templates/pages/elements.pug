@@ -32,5 +32,7 @@ block main
         .calendar__content
             - i=1
             while i < 36
-                .calendar__day= i++
-                
+                if i == 5
+                    .calendar__day.calendar__day_active= i++
+                else
+                    .calendar__day= i++
