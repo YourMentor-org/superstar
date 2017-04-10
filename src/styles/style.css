@@ -165,11 +165,11 @@ body{
 }
 
 .location__disposition{
-	margin: 40px 0 0 20px;
+	margin: 12px 0 0 20px;
 }
 
 .location__city{
-	margin: 6px 0 0 16px;
+	margin: 5px 0 0 18px;
 }
 
 .location__address{
@@ -182,7 +182,7 @@ body{
 	text-transform: uppercase;
 	background: #db0536;
 	border-radius: 28px;
-	margin: 44px 0 0 52px;
+	margin: 15px 0 0 55px;
 	padding: 0 61px 0 64px;
 }
 
@@ -218,4 +218,8 @@ input {
 
 .rating__img:before {
   content: '\2605';
+}
+
+iframe{
+	margin: 15px 0 0 20px;
 }
