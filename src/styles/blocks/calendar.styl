@@ -4,21 +4,24 @@ $calendar-content-color = #2e2e2e
 $calendar-width = (300/$base-size)em
 $calendar-day-width = ((300/7)/$base-size)em
 $calendar-day-bg = #f9f9f9
+$calendar-nav-height = 2.5em
 .calendar
     padding .5em
     width 18.75em
     &__prev, &__next
         width calc(100%/7)
+        height $calendar-nav-height
         padding 0
         border-radius 0
         background-color transparent
+        font-size inherit
         line-height 1
     &__header
         background-color $calendar-header-bg
     &__month
         display flex
         justify-content space-between
-        height 2.5em
+        height $calendar-nav-height
         display flex
     &__month-select
         border 0
