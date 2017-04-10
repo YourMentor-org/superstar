@@ -90,3 +90,4 @@ https://github.com/tars/tars/blob/master/.eslintrc
 + [afiliptsov](https://github.com/afiliptsov)
 + [ramil](https://github.com/rtxrulez)
 + [kovdimaleks](https://github.com/dmitrijkov)
++ [static](https://github.com/static15)
