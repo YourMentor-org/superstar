@@ -34,5 +34,7 @@ block main
             while i < 36
                 if i == 5
                     .calendar__day.calendar__day_active= i++
+                else if i == 33 || i == 34 || i == 35
+                    .calendar__day.calendar__day_month-next= i++
                 else
                     .calendar__day= i++
