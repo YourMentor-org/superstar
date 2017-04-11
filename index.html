@@ -1,48 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="style.css"/>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>JCB</title>
+	<link rel="stylesheet" type="text/css" href="src/styles/style.css">
+	<link rel="stylesheet" type="text/css" href="src/styles/font.css">
 </head>
 <body>
-
-<div>
-    <a href="#"></a>
-    <span>Москва, Россия</span>
-    <img src="#" alt="logo"/>
-</div>
-
-<input type="search" placeholder="Поиск отеля по названию"/>
-
-
-
-<ul>
-    <li>
-        <div>
-            <div>Гостиница Шератон Москва</div>
-            <div>Химки - рядом с Москва</div>
-            <div><img src="#" alt="рейтинг"/></div>
-            <div>18800 руб.</div>
-        </div>
-    </li>
-    <li>
-        <div>
-            <div>Гостиница Шератон Москва</div>
-            <div>Химки - рядом с Москва</div>
-            <div><img src="#" alt="рейтинг"/></div>
-            <div>18800 руб.</div>
-        </div>
-    </li>
-    <li>
-        <div>
-            <div>Гостиница Шератон Москва</div>
-            <div>Химки - рядом с Москва</div>
-            <div><img src="#" alt="рейтинг"/></div>
-            <div>18800 руб.</div>
-        </div>
-    </li>
-</ul>
-
+	<header class="header">
+		<div class="container container_header">
+			<div class="header__block-left">
+			<a class="link-back" href="#">
+				<img class="arrow-back" src="src/img/white-arrow-left.svg" alt="back">
+			</a></div>
+			<div class="header__city">Москва, Россия</div>
+			<div class="header__logo">
+				<a href="#">
+					<img class="jcb-logo" src="src/img/jcb-logo.svg" alt="JCB">
+				</a>
+			</div>
+			<div class="header-date">12—13 марта
+				<div class="icons">1 <img class="icon icon_moon" src="src/img/moon-white.png" alt="nights"></div>
+				<div class="icons">2 <img class="icon icon_adult" src="src/img/adult-white.png" alt="adults"></div>
+				<div class="icons">1 <img class="icon icon_child" src="src/img/child-white.png" alt="children"></div>
+			</div> 	
+			<div class="header__site-description">Гостиница Шератон Москва</div>
+			<div class="header__location">Аэропорт Шереметьево</div>
+		</div>
+	</header>
+	<div class="container container_main-block">
+	<div class="rating">
+		<input class="rating__input rating__input_star-5" id="rating__input_star-5" type="radio" name="star"/>
+    	<label class="rating__img rating__img_star-5" for="rating__input_star-5"></label>
+    	<input class="rating__input rating__input_star-4" id="rating__input_star-4" type="radio" name="star"/>
+    	<label class="rating__img rating__img_star-4" for="rating__input_star-4"></label>
+    	<input class="rating__input rating__input_star-3" id="rating__input_star-3" type="radio" name="star"/>
+    	<label class="rating__img rating__img_star-3" for="rating__input_star-3"></label>
+    	<input class="rating__input rating__input_star-2" id="rating__input_star-2" type="radio" name="star"/>
+    	<label class="rating__img rating__img_star-2" for="rating__input_star-2"></label>
+    	<input class="rating__input rating__input_star-1" id="rating__input_star-1" type="radio" name="star"/>
+    	<label class="rating__img rating__img_star-1" for="rating__input_star-1"></label>
+	</div>
+	<div class="hotel_review">9 из 10 - по 1576 отзывам гостей</div>
+	<div class="room">
+		<div class="room-type">Standart Room</div>
+		<div class="cost">18 800 руб.</div>
+			<ul class="room-list">
+				<li class="room_list__item">Стандартные номера - 32 м.кв</li>
+				<li class="room-list__item">Проживание 2 взрослых и 1 ребенка</li>
+				<li class="room-list__item">Две односпальные кровати</li>
+				<li class="room-list__item">Нет бесплатной отмены</li>
+				<li class="room-list__item">Налоги и сборы включены</li>
+				<li class="room-list__item">Оплата сейчас</li>
+			</ul>
+	</div>
+	<div class="change-date">12—13 марта
+		<div class="icons">1 <img class="icon" src="src/img/moon-black.png" alt="nights"></div>
+		<div class="icons">2 <img class="icon" src="src/img/adult-black.png" alt="adults"></div>
+		<div class="icons">1 <img class="icon" src="src/img/child-black.png" alt="children"></div>
+	</div>
+	<button class="btn">Изменить</button>
+	<div class="information">
+		<h3 class="information-room">Standart Room</h3>
+		<ul class="information-list">
+			<li class="information-list__item">Заселение в номера с 14:00</li>
+			<li class="information-list__item">Выезд из номера до 12:00</li>
+			<li class="information-list__item">Номеров</li>
+		</ul>
+	</div>
+	<div class="services">
+		<h3 class="services-room">Услуги в отеле</h3>
+		<ul class="services-list">
+			<li class="services-list__item">Круглосуточная стойка регистрации</li>
+			<li class="services-list__item">Зоны общественного пользования с кондиционированием</li>
+			<li class="services-list__item">Номера для аллергиков</li>
+			<li class="services-list__item">Банкомат на территории отеля</li>
+		</ul>
+	</div>
+	<a href="#" class="additional-link">Подробнее</a>
+	<div class="map"></div>
+	<div class="location">
+		<h3 class="location__disposition">Расположение</h3>
+		<div class="location__city">141411, Химки</div>
+		<div class="location__address">Международные шоссе, 28-б, стр. 5</div>
+		<div class="location__map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d287245.68363551644!2d37.73401173756148!3d55.77401514226763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1skk!2skz!4v1491842231706" width="280" height="207" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+	</div>
+	<button class="btn btn_reservation">Забронировать</button>
+	</div>
 </body>
 </html>
