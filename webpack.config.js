@@ -1,6 +1,8 @@
 'use strict';
 const webpack = require('webpack');
-let path = {
+const path    = require('PATHAPP');
+const PATHAPP = {
+    entry: './src/js/app.js',
     outputDir: __dirname + '/dist/js',
     outputFile: 'bundle.js'
 };
@@ -10,15 +12,24 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
     context: __dirname,
-    entry: './src/js/app.js', // входной скрипт
+    // Входные данные
+    entry: {
+        application: PATHAPP.entry // Входной файл
+    }
     watch: NODE_ENV == 'development', // вотчер только для разработки
     watchOptions: {
         aggregateTimeout: 100 // задержка перед обработкой
     },
     devtool: NODE_ENV == 'development' ? 'source-map' : null, // sourcemap только для разработки
+    devServer: {
+        contentBase: PATHAPP.dist,
+        info:        true,
+        hot:         false,
+        inline:      true
+    },
     output: {
-        path: path.outputDir,
-        filename: path.outputFile
+        PATHAPP: PATHAPP.outputDir,
+        filename: PATHAPP.outputFile
     },
     module: {
         loaders: [
