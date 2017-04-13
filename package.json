@@ -42,6 +42,8 @@
     "gulp-svgmin": "^1.2.3",
     "gulp-uglify": "^2.1.2",
     "style-loader": "^0.16.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
     "webpack": "^2.3.3"
   }
 }
