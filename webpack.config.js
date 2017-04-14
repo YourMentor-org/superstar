@@ -1,47 +1,36 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
-console.log('fffff', path.join(__dirname, 'src/home'));
-const pathapp = {
-    entry: path.join(__dirname, 'src/home'),
-    context: path.join(__dirname, 'src'),
-    outputDir: path.join(__dirname, 'dist'),
-    outputFile: '[name]/index.js',
-    dist: 'dist'
-};
+console.log('fffff', path.join(__dirname, 'dist'));
 
 // берем переменную окружения
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
     // Входные данные
-    entry: {
-        home: pathapp.entry // Входной файл
-    },
-    watch: NODE_ENV == 'development', // вотчер только для разработки
-
-    watchOptions: {
-        aggregateTimeout: 100 // задержка перед обработкой
+    entry: { // вход
+        index: path.join(__dirname, 'src')
     },
 
-    devtool: NODE_ENV == 'development'
-        ? 'source-map'
-        : null, // sourcemap только для разработки
-
-    output: {
-        path: pathapp.outputDir,
+    output: { // вывод
+        path: path.join(__dirname, 'dist'),
         publicPath: '/',
-        filename: pathapp.outputFile
+        filename: 'index.js'
+    },
+
+    devServer: { // включение сервера разработки
+        contentBase: './dist', // куда компилить
+        // info: true,
+        hot: false,
+        inline: true // записывает специальный скрипт на странице для обновления без
+        // перезагрузки
     },
 
     module: {
         loaders: [
             {
                 test: /\.(pug|jade)$/,
-                loader: [
-                    'file-loader?name=[path][name].html&context='+pathapp.context,
-                    'pug-html-loader?exports=false'
-                ]
+                loader: ['file-loader?name=[path][name].html&context=src', 'pug-html-loader?exports=false']
             },
             // js loader
             {
@@ -64,18 +53,12 @@ module.exports = {
             },
             // Files that require no compilation or processing
             {
-                test: /\.(ttf|woff|woff2|eot|png|svg)/,
-                loader: 'url-loader',
-                query: {
-                    limit: 10000,
-                    name: '[path][name].[ext]',
-                    context: pathapp.dist
-                }
+                test: /\.(css|ttf|eot|woff|woff2|png|ico|jpg|jpeg|gif|svg)$/i,
+                loader: [
+                    'file?context=' + path.join(__dirname, 'src') + '&name=assets/static/[ext]/[name].[hash].[ext]'
+                ]
             }
         ]
     },
-    plugins: [new ExtractTextWebpackPlugin('[name]/styles.css')],
-    devServer: {
-        contentBase: pathapp.outputDir
-    }
+    plugins: [new ExtractTextWebpackPlugin('[name]/styles.css')]
 }
