@@ -1,7 +1,7 @@
 // стили
-require('../../modules/layout/main.js');
-// увеличение
-require('../../modules/counter/counter.js');
+require('../layout/main.js');
+// форма увеличения
+require('../counter/counter.js');
 require('./index.styl');
 
 //шаблон

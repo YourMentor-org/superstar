@@ -11,7 +11,7 @@ module.exports = {
     context: path.join(__dirname, 'src'), // Поиск модулей начиная с этой папки
 
     entry: { // вход
-        searchPage: './pages/search-page' // точка входа src/index.js
+        searchPage: './modules/search-page' // точка входа src/index.js
     },
 
     output: { // вывод
