@@ -1,5 +1,7 @@
 // стили
-require('../../styles/app.styl');
+require('../../modules/layout/main.js');
+// увеличение
+require('../../modules/counter/counter.js');
 require('./index.styl');
 
 //шаблон

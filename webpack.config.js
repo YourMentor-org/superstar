@@ -61,7 +61,7 @@ module.exports = {
             // Files that require no compilation or processing
             {
                 test: /\.(css|ttf|eot|woff|woff2|png|ico|jpg|jpeg|gif|svg)$/i,
-                loader: ['file?name=[path][name].[ext]']
+                loader: ['file-loader?name=[path][name].[ext]']
             }
         ]
     },
