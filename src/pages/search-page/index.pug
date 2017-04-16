@@ -1,5 +1,8 @@
-extends templates/layout/main
-
+extends ../../modules/layout/main
+block styles
+    link(rel="stylesheet" href="searchPage.css")
+block scripts
+    script(src="searchPage.js")
 block main
     form.search-page
         .search-page__header

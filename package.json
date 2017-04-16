@@ -4,7 +4,7 @@
   "description": "### Начало работы Для начала разработки необходимо установить все зависимости из nodejs ``` npm i ``` ### Работа с gulp",
   "main": "gulpfile.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --progress --port 3001",
+    "dev": "webpack && NODE_ENV=development webpack-dev-server --progress --port 3001",
     "build": "rm -rf dist/* && NODE_ENV=production webpack --colors"
   },
   "repository": {
@@ -17,7 +17,7 @@
     "url": "https://github.com/YourMentor-org/superstar/issues"
   },
   "homepage": "https://github.com/YourMentor-org/superstar#readme",
-  "dependencies": {
+  "devDependencies": {
     "autoprefixer": "^6.7.7",
     "babel": "^6.23.0",
     "babel-core": "^6.24.1",
@@ -53,5 +53,8 @@
     "url-loader": "^0.5.8",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "flag-icon-css": "^2.8.0"
   }
 }

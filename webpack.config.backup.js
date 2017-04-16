@@ -8,10 +8,10 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
     // Входные данные
-    context: path.join(__dirname, 'src'), // Поиск модулей начиная с этой папки
+    context: path.join(__dirname, 'src'),// Поиск модулей начиная с этой папки
 
     entry: { // вход
-        searchPage: './pages/search-page' // точка входа src/index.js
+        index: './index' // точка входа src/index.js
     },
 
     output: { // вывод
@@ -28,16 +28,13 @@ module.exports = {
         // перезагрузки
     },
 
-    // resolve: {
-    //     modulesDirectories: ['node_modules']
-    // },
+    // watch: true,
 
     module: {
         loaders: [
             {
                 test: /\.(pug|jade)$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: ['file-loader?name=[name].html&context=src', 'pug-html-loader?exports=false']
+                loader: ['file-loader?name=[path][name].html&context=src', 'pug-html-loader?exports=false']
             },
             // js loader
             {
@@ -61,23 +58,29 @@ module.exports = {
             // Files that require no compilation or processing
             {
                 test: /\.(css|ttf|eot|woff|woff2|png|ico|jpg|jpeg|gif|svg)$/i,
-                loader: ['file?name=[path][name].[ext]']
+                loader: [
+                    'file?name=[path][name].[ext]'
+                ]
             }
         ]
     },
     plugins: [
         new webpack.NoErrorsPlugin(),
-        new ExtractTextWebpackPlugin('[name].css'),
-        new webpack.optimize.CommonsChunkPlugin({name: 'common'})
+        new ExtractTextWebpackPlugin('[name]/styles.css'),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'common'
+        })
     ]
 };
 
 if (NODE_ENV == 'production') {
-    module.exports.plugins.push(new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: false,
-            drop_console: true,
-            unsafe: true
-        }
-    }))
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings:     false,
+                drop_console: true,
+                unsafe:       true
+            }
+        })
+    )
 }

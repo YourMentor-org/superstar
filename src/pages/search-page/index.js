@@ -1,5 +1,6 @@
 // стили
-require('./main.styl');
+require('../../styles/app.styl');
+require('./index.styl');
 
 //шаблон
 require('./index.pug');
