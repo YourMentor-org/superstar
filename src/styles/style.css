@@ -145,7 +145,7 @@ body{
 
 .information-list{
 	padding: 0 0 0 20px;
-	margin: 4px 0 0 0;
+	margin: 4px 0 0;
 	list-style: none;
 	font-size: 16px;
 }
@@ -161,7 +161,7 @@ body{
 }
 
 .services-list{
-	margin: 4px 0 0 0;
+	margin: 4px 0 0;
 	padding: 0 0 0 20px;
 	list-style: none;
 	color: black;
