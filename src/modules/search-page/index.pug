@@ -1,4 +1,5 @@
 extends ../../modules/layout/main
+include ../counter/counter
 block styles
     link(rel="stylesheet" href="searchPage.css")
 block scripts
@@ -13,19 +14,9 @@ block main
         .search-page__content
             .search-page__subhead
                 | Гостей взрослых
-            .counter
-                button.btn.counter__btn
-                    span.sprite.sprite_plus
-                input.counter__number(type='text', value='2', disabled)
-                button.btn.counter__btn.counter__btn_active
-                    span.sprite.sprite_minus
+            +counter('1')
             .search-page__subhead
                 | Детей
-            .counter
-                button.btn.counter__btn
-                    span.sprite.sprite_plus
-                input.counter__number(type='text', value='2', disabled)
-                button.btn.counter__btn
-                    span.sprite.sprite_minus
+            +counter('2')
         .search-page__footer
             button.btn.btn__submit(type='submit') Показать отели и цены
