@@ -1,0 +1,39 @@
+include ../sprite/sprite
+mixin calendar
+    .calendar
+        .calendar__header
+            .calendar__month
+                button.btn.calendar__prev
+                    +icon('arrow').calendar__icon
+                select.calendar__month-select
+                    option Январь
+                    option Февраль
+                    option Март
+                    option Апрель
+                    option Май
+                    option Июнь
+                    option Июль
+                    option Август
+                    option Сентябрь
+                    option Октябрь
+                    option Ноябрь
+                    option Декабрь
+                button.btn.calendar__next
+                    span.sprite.sprite_next
+            .calendar__week
+                .calendar__day пн
+                .calendar__day вт
+                .calendar__day ср
+                .calendar__day чт
+                .calendar__day пт
+                .calendar__day сб
+                .calendar__day вс
+            .calendar__content
+                - i=1
+                while i < 36
+                    if i == 5
+                        .calendar__day.calendar__day_active= i++
+                    else if i == 33 || i == 34 || i == 35
+                        .calendar__day.calendar__day_month-next= i++
+                    else
+                        .calendar__day= i++

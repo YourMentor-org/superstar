@@ -1,0 +1,75 @@
+@import '../../styles/app'
+$calendar-header-bg             = #1e1f26
+$calendar-week-color            = #fff
+$calendar-border-color          = #adadad
+$calendar-month-next-color      = #adadad
+$calendar-content-color         = #2e2e2e
+$calendar-width                 = (300/$base-size)em
+$calendar-day-width             = ((300/7)/$base-size)em
+$calendar-day-bg                = #f9f9f9
+$calendar-nav-height            = 2.5em
+
+.calendar
+    padding .5em
+    width 18.75em
+    &__prev, &__next
+        width calc(100%/7)
+        height $calendar-nav-height
+        padding 0
+        border-radius 0
+        background-color transparent
+        font-size inherit
+        line-height 1
+        &:focus
+            box-shadow none
+    &__header
+        background-color $calendar-header-bg
+    &__month
+        display flex
+        justify-content space-between
+        height $calendar-nav-height
+        display flex
+    &__month-select
+        border 0
+        background-color inherit
+        color #fff
+        font-size 1.12em
+        padding .2em 0
+        -moz-appearance none
+        option
+            background-color $calendar-header-bg
+    &__week
+        display flex
+        color $calendar-week-color
+        .calendar__day
+            border 0
+            background-color transparent
+            cursor inherit
+            &:hover, &:focus
+                background-color transparent
+                color inherit
+
+    &__content
+        display flex
+        flex-wrap wrap
+        border-right 1px solid $calendar-border-color
+        color $calendar-content-color
+    &__icon
+        height 20px
+    &__day
+        padding .73em 0
+        width calc(100%/7)
+        border-left 1px solid $calendar-border-color
+        border-bottom 1px solid $calendar-border-color
+        background-color $calendar-day-bg
+        background-image linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%);
+        text-align center
+        cursor pointer
+        &_active, &:hover, &:focus
+            background-color $color-red
+            color #fff
+        &_month-next
+            color $calendar-month-next-color
+            &:hover, &:active
+                background-color $calendar-day-bg
+                color $calendar-month-next-color

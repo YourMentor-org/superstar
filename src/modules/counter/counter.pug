@@ -1,0 +1,8 @@
+include ../sprite/sprite
+mixin counter(count)
+    .counter
+        button.btn.counter__btn.counter__btn_minus
+            +icon('minus')
+        input.counter__number(type='text', value=count, disabled)
+        button.btn.counter__btn.counter__btn_plus.counter__btn_active
+            +icon('plus')

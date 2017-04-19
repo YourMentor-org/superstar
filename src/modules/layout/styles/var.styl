@@ -1,0 +1,16 @@
+$base-size = 16px
+$base-color = #fff
+$base-bg = #4e94c2
+$color-red = #db0536
+$color-red-hover = alpha($color-red, 0.8)
+$images = '~/images/'
+$content-x = 1.25em
+$content-y = 1.56em
+
+// Опорные точки для медиа выражений указываются в em чтобы при масштабирование страницы
+// медиа выражения так же работали 1em = 16px. 16px берется из размера корневого элемента страницы у нас это body
+$media = {
+  mobile: 20em, // 320px если размер шрифта 16px
+  tablet: 48em, // 768px/16  для планшетов
+  desktop: 64em // 1024px/16 для компов
+}

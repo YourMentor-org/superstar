@@ -1,0 +1,26 @@
+extends ../../modules/layout/main
+include ../counter/counter
+include ../calendar/calendar
+block styles
+    link(rel="stylesheet" href="searchPage.css")
+block scripts
+    script(src="searchPage.js")
+block config
+    - var pageTitle = 'Search Page'
+block main
+    form.search-page
+        +calendar()
+        .search-page__header
+            button.btn.search-page__btn Сегодня
+            button.btn.search-page__btn.search-page__select-date
+                | Выбрать дату
+
+        .search-page__content
+            .search-page__subhead
+                | Гостей взрослых
+            +counter('1')
+            .search-page__subhead
+                | Детей
+            +counter('2')
+        .search-page__footer
+            button.btn.btn__submit(type='submit') Показать отели и цены
