@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const SvgStore = require('webpack-svgstore-plugin');
 console.log('fffff', path.join(__dirname, 'dist'));
 
 // берем переменную окружения
@@ -68,7 +69,18 @@ module.exports = {
     plugins: [
         new webpack.NoErrorsPlugin(),
         new ExtractTextWebpackPlugin('[name].css'),
-        new webpack.optimize.CommonsChunkPlugin({name: 'common'})
+        new webpack.optimize.CommonsChunkPlugin({name: 'common'}),
+        new SvgStore({
+            // svgo options
+            svgoOptions: {
+                plugins: [
+                    {
+                        removeTitle: true
+                    }
+                ]
+            },
+            prefix: 'icon-'
+        })
     ]
 };
 

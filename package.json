@@ -27,6 +27,7 @@
     "browser-sync": "^2.18.8",
     "css-loader": "^0.28.0",
     "del": "^2.2.2",
+    "external-svg-sprite-loader": "^2.2.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
     "gulp": "^3.9.1",
@@ -50,9 +51,11 @@
     "style-loader": "^0.16.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
+    "svg-sprite-loader": "^0.3.0",
     "url-loader": "^0.5.8",
     "webpack": "^2.3.3",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.4.2",
+    "webpack-svgstore-plugin": "^4.0.0"
   },
   "dependencies": {
     "flag-icon-css": "^2.8.0"
