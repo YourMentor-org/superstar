@@ -3,10 +3,10 @@
     font-size 1em
     &::before
         content ' '
+        display inline-block
         background-image url("../images/sprite/svg-sprite.svg")
         background-repeat no-repeat
-        background-size 8.125em 6.6875em
-        display inline-block
+        background-size 9.875em 6.6875em
         .no-svg &
             background-image url("../images/sprite/svg-sprite.png")
 
@@ -30,15 +30,23 @@
     background-position -0.9375em -4.625em
     width 0.4375em
     height 1.125em
-.sprite_search::before
+.sprite_next::before
     background-position -2.3125em -4.625em
+    width 0.75em
+    height 1.0625em
+.sprite_prev::before
+    background-position -4em -4.625em
+    width 0.75em
+    height 1.0625em
+.sprite_search::before
+    background-position -5.6875em -4.625em
     width 0.875em
     height 0.875em
 .sprite_moon::before
-    background-position -4.125em -4.625em
+    background-position -8.125em -0.9375em
     width 0.8125em
     height 0.875em
 .sprite_star::before
-    background-position -5.875em -4.625em
+    background-position -8.125em -2.75em
     width 0.6875em
     height 0.6875em
