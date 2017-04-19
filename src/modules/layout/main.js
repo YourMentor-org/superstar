@@ -1,4 +1,4 @@
-require('../../styles/var.styl');
+// require('../../styles/var.styl');
 require('./main.pug');
 require('./main.styl');
 
