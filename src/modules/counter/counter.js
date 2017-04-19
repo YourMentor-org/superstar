@@ -1,8 +1,8 @@
 require('./counter.pug');
 require('./counter.styl');
 
-const $plus = document.querySelector('.counter__btn_plus');
-const $minus = document.querySelector('.counter__btn_minus');
+const $plus = document.querySelectorAll('.counter__btn_plus');
+const $minus = document.querySelectorAll('.counter__btn_minus');
 
 function editInput($thisNumber, operator) {
     let num = parseInt($thisNumber.value);
@@ -16,14 +16,18 @@ function editInput($thisNumber, operator) {
     }
 };
 
-$plus.addEventListener('click', function(event) {
-    let $thisNumber = this.parentNode.querySelector('.counter__number');
-    editInput($thisNumber, 'plus');
-    event.preventDefault();
-});
+for(let i=0; i<$plus.length; i++) {
+    $plus[i].addEventListener('click', function(event) {
+        let $thisNumber = this.parentNode.querySelector('.counter__number');
+        editInput($thisNumber, 'plus');
+        event.preventDefault();
+    });
+}
 
-$minus.addEventListener('click', function(event) {
-    let $thisNumber = this.parentNode.querySelector('.counter__number');
-    editInput($thisNumber, 'minus');
-    event.preventDefault();
-});
+for(let i=0; i<$minus.length; i++) {
+    $minus[i].addEventListener('click', function(event) {
+        let $thisNumber = this.parentNode.querySelector('.counter__number');
+        editInput($thisNumber, 'minus');
+        event.preventDefault();
+    });
+}
