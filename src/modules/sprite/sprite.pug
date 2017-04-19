@@ -1,0 +1,5 @@
+mixin icon(icon)
+    - var iconClass = 'icon_' + icon;
+    - var iconName = '#icon-' + icon
+    svg(class=iconClass aria-hidden=true role="presentation")&attributes(attributes)
+        use(xlink:href=iconName)

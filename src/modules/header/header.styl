@@ -15,14 +15,17 @@ $header-prev-bg-hover = rgba(255, 255, 255, 0.2)
     &__prev
         width $header-height
         height $header-height
-        padding-top .8em
         text-align center
         cursor pointer
         background-color $header-prev-bg
         &:hover, &:focus
             background-color $header-prev-bg-hover
     &__logo
-        display inline-block
-        margin-right .93em
+        display block
+        width 35px
+        margin 0 auto
         text-decoration none
         color inherit
+    &__head
+        display block
+        padding-left .93em
