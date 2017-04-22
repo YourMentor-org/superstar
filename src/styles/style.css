@@ -242,18 +242,19 @@ input {
   transition: all .25s;
 }
 
-.rating__input_star-5:checked ~ .rating__img:before {
+.rating__input_star-1:checked ~ .rating__img:before {
   color: #FE7;
 }
 
-.rating__input_star-1:checked ~ .rating__img:before {
+.rating__input_star-5:checked ~ .rating__img:before {
  color: #F62; }
 
 .rating__img:before {
   content: '\2605';
 }
 
-.rating__input:hover ~ .rating__img {
+
+.rating__input:hover ~ .rating__img{
 	color: #FD4;
 }
 
